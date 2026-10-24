@@ -1,0 +1,24 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Data
+data/uploads/*
+!data/uploads/.gitkeep
+data/vector_store/*
+!data/vector_store/.gitkeep
+
+# Node / frontend
+frontend-react/node_modules/
+frontend-react/dist/
+frontend-react/.env
+
+# OS / editor
+.DS_Store
+*.log
+*onnx
+*onnx.json
+data/piper_models/*
+/.vscode

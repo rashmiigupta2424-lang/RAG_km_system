@@ -1,0 +1,47 @@
+RAG KM SYSTEM - WINDOWS RUN GUIDE
+=================================
+
+RECOMMENDED METHOD
+------------------
+1. Install Python 3.11 and Node.js 20 LTS (or newer).
+2. Open PowerShell.
+3. Go to the extracted project folder.
+4. Run:
+   powershell -ExecutionPolicy Bypass -File .\scripts\setup_windows.ps1
+5. Open .env and set:
+   GEMINI_API_KEY=YOUR_REAL_GEMINI_API_KEY
+6. Start the application:
+   powershell -ExecutionPolicy Bypass -File .\scripts\start_all_windows.ps1
+7. Open:
+   http://localhost:5173
+
+Backend API docs:
+   http://localhost:8000/docs
+
+DEFAULT DEMO LOGIN
+------------------
+Admin:
+   username: admin
+   password: admin123
+
+Viewer:
+   username: viewer
+   password: viewer123
+
+IMPORTANT
+---------
+- Do NOT run npm from the project root. Run it inside frontend-react.
+- Do NOT commit or share .env because it contains your API key.
+- Do NOT use Python 3.14 for this project. Python 3.11 is recommended.
+- If PowerShell blocks scripts, the commands above already use -ExecutionPolicy Bypass.
+
+MANUAL BACKEND
+--------------
+.\venv\Scripts\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
+
+MANUAL FRONTEND (second terminal)
+---------------------------------
+cd frontend-react
+npm.cmd run dev -- --host 127.0.0.1
+
+If setup fails, read TROUBLESHOOTING.md and use the exact error message rather than guessing.
